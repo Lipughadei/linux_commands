@@ -5,3 +5,4 @@
 
 -> df -h (to get the disk space in the instance)
 -> nproc (it is to view how  many CPU rae there)
+-> free (to view the memory)
