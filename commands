@@ -4,3 +4,4 @@
 (ii) hostname lipu  -> (this is to change the ip addres to your desired name  [root@lipughadei ec2-user]# it only works on sudo/root user)
 
 -> df -h (to get the disk space in the instance)
+-> nproc (it is to view how  many CPU rae there)
