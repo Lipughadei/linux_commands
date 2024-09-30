@@ -1,1 +1,4 @@
 rm -fr $(find . -size 0M)  -> (to find and replace the zero byte files from the location/folders) 
+
+sudo - su
+hostname lipu  -> (this is to change the ip addres to your desired name)
