@@ -1,0 +1,1 @@
+[ec2-user@ip-172-31-36-137 ~]$ rm -fr $(find . -size 0M)
