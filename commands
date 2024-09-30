@@ -1,1 +1,1 @@
-[ec2-user@ip-172-31-36-137 ~]$ rm -fr $(find . -size 0M)
+rm -fr $(find . -size 0M)  -> (to find and replace the zero byte files from the location/folders) 
