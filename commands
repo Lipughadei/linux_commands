@@ -61,3 +61,5 @@ https://faculty.cs.niu.edu/~hutchins/csci480/signals.htm   (signals)
 https://chromium.googlesource.com/chromiumos/docs/+/master/constants/signals.md  (list of signals in linux)
 
 https://man7.org/linux/man-pages/man7/signal.7.html  (list of signals in linux)
+
+-> bash is dynamic
