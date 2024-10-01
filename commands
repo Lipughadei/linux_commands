@@ -1,7 +1,7 @@
 -> rm -fr $(find . -size 0M)  -> (to find and replace the zero byte files from the location/folders) 
 
-(i) sudo - su
-(ii) hostname lipu  -> (this is to change the ip addres to your desired name  [root@lipughadei ec2-user]# it only works on sudo/root user)
+-> (i) sudo - su
+-> (ii) hostname lipu  -> (this is to change the ip addres to your desired name  [root@lipughadei ec2-user]# it only works on sudo/root user)
 
 -> df -h (to get the disk space in the instance)
 -> nproc (it is to view how  many CPU rae there)
@@ -9,4 +9,6 @@
 
 -> ps -ef (to view all the processes which are running)
 
-https://youtu.be/CyQtk9f646Q?si=mOZY24vvDMVIBeB9  (followfor more commands)
+-> https://youtu.be/CyQtk9f646Q?si=mOZY24vvDMVIBeB9  (followfor more commands)
+
+-> https://www.techtarget.com/searchnetworking/tutorial/Use-cURL-and-Wget-to-download-network-files-from-CLI#:~:text=CURL%20uploads%20and%20downloads%20resources,pushing%20files%20to%20remote%20locations.   (differencxe between curl and wget)
