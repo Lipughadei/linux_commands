@@ -63,3 +63,5 @@ https://chromium.googlesource.com/chromiumos/docs/+/master/constants/signals.md 
 https://man7.org/linux/man-pages/man7/signal.7.html  (list of signals in linux)
 
 -> bash is dynamic
+
+-> https://wiki.jenkins.io/display/JENKINS/Remote+access+API  (jenkins API)
