@@ -1,0 +1,2 @@
+-> git reset --hard <commit id> (achieve through git log command)
+to go back to the previous commit or previous version
