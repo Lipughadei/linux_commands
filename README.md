@@ -1,7 +1,2 @@
 # linux_commands
 https://bellard.org/jslinux/  -->if you dont have any virtual machine you van use this link to create your temporary virtual machine to practice
-
-https://youtu.be/d2hCS6T1z3k?si=u95EYyc8kuxyZK-o  -> (how to secure your data and protect from any vulnerable activity)
-
---> ping 8.8.8.8 -t  (to continuously ping the specic server)
---> https://cidr.xyz/  (to know CIDR range of an Ip / how many ip address it can make)
