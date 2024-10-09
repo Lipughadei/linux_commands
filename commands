@@ -70,3 +70,5 @@ https://youtu.be/OuyNM5-r8P8?si=w0k3yH8Ds3_gE1lb  (Shell scripting project)
 -> https://docs.github.com/en/rest/repos/repos?apiVersion=2022-11-28   (github rest API)
 
 -> :x (we can use it to save the file on the vi editor also)
+
+-> /etc/security/pwquality.conf  (password config file in liux / not neccessary)
