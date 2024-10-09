@@ -4,3 +4,5 @@ An internet gateway (IGW) in Amazon Web Services (AWS) allows communication betw
 -> https://whatismyipaddress.com/ip-address-to-binary#:~:text=An%20IP%20address%20is%20a,entirely%20of%200s%20and%201s. (to convert fom ip address to bits)
 -> 1 bit = 8 byte
 -> ip address contains 4 bit = 32 byte
+
+-> https://cidr.xyz/
