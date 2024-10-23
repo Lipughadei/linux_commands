@@ -1,7 +1,9 @@
 WHAT IS INTERNET GATEWAY IN AWS ::>
 An internet gateway (IGW) in Amazon Web Services (AWS) allows communication between a Virtual Private Cloud (VPC) and the internet.
+-> for public subnet it is using INTERNET GATEWAY
+-> for private subnet it is using NAT GATEWAY
 
--> https://whatismyipaddress.com/ip-address-to-binary#:~:text=An%20IP%20address%20is%20a,entirely%20of%200s%20and%201s. (to convert fom ip address to bits)
+-> https://whatismyipaddress.com/ip-address-to-binary#:~:text=An%20IP%20address%20is%20a,entirely%20of%200s%20and%201s. (to convert fom ip address to bits after that byte)
 -> 1 bit = 8 byte
 -> ip address contains 4 bit = 32 byte
 
