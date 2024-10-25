@@ -39,3 +39,26 @@ https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inli
 -> https://www.google.com/search?q=devops+engineer+managerial+round+interview+questions&oq=devops+engineer+manageral+&gs_lcrp=EgZjaHJvbWUqCQgBECEYChigATIGCAAQRRg5MgkIARAhGAoYoAEyCQgCECEYChigATIJCAMQIRgKGKABMgcIBBAhGI8CMgcIBRAhGI8C0gEKMTc5MzlqMGoxNagCCLACAQ&sourceid=chrome&ie=UTF-8
 
 -> https://www.google.com/search?q=devops+engineer+technical+question&oq=devops+engineer+technical+question&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIICAEQABgWGB4yCAgCEAAYFhgeMggIAxAAGBYYHjINCAQQABiGAxiABBiKBTINCAUQABiGAxiABBiKBTINCAYQABiGAxiABBiKBTINCAcQABiGAxiABBiKBTINCAgQABiGAxiABBiKBTIKCAkQABiABBiiBNIBCjI0Mjc4ajBqMTWoAgiwAgE&sourceid=chrome&ie=UTF-8
+
+=======================================================================================================================
+
+#AWS VPC
+
+When you create a default VPC in Amazon Web Services (AWS), you get the following by default: 
+A public subnet in each Availability Zone 
+An internet gateway 
+A default security group 
+A default network access control list (ACL) 
+DNS settings that enable DNS resolution 
+A route in the main route table that sends all traffic to the internet gateway 
+A VPC with a size /16 IPv4 CIDR block 
+You can use a default VPC to:
+Launch Amazon EC2 instances
+Use services like Amazon RDS, Elastic Load Balancing, and Amazon EMR
+Get started quickly
+Launch public instances like a blog or simple website 
+You can modify the components of your default VPC as needed. You can also create your own VPC, which is known as a nondefault VPC. 
+
+A default VPC comes with a public subnet in each Availability Zone, an internet gateway, and settings to enable DNS resolution. Therefore, you can immediately start launching Amazon EC2 instances into a default VPC.
+
+-> https://docs.aws.amazon.com/vpc/latest/userguide/default-vpc-components.html
