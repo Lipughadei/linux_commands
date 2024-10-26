@@ -62,3 +62,9 @@ You can modify the components of your default VPC as needed. You can also create
 A default VPC comes with a public subnet in each Availability Zone, an internet gateway, and settings to enable DNS resolution. Therefore, you can immediately start launching Amazon EC2 instances into a default VPC.
 
 -> https://docs.aws.amazon.com/vpc/latest/userguide/default-vpc-components.html
+
+======================================================================================================================
+
+# EBC CERTIFICATE
+
+-> https://www.google.com/search?q=ebc+certificate&oq=EBC+certificate&gs_lcrp=EgZjaHJvbWUqCggAEAAYsQMYgAQyCggAEAAYsQMYgAQyBwgBEAAYgAQyDwgCEAAYQxixAxiABBiKBTIMCAMQABhDGIAEGIoFMgcIBBAAGIAEMgcIBRAAGIAEMgcIBhAAGIAEMgwIBxAAGBQYhwIYgAQyBwgIEAAYgAQyDAgJEAAYQxiABBiKBdIBCDUwNjBqMGo3qAIIsAIB&sourceid=chrome&ie=UTF-8
