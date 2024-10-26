@@ -1,0 +1,110 @@
+example of declarative pipeline and scripted pipeline
+
+
+Sure! Below are examples of both a Declarative Pipeline and a Scripted Pipeline in Jenkins.
+
+Example of a Declarative Pipeline
+A Declarative Pipeline is designed to be simpler and more structured. Here’s a sample Jenkinsfile using the Declarative syntax:
+
+pipeline {
+    agent any  // This means the pipeline can run on any available agent
+
+    environment {
+        APP_NAME = 'my-app'
+        DEPLOY_ENV = 'production'
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                // Checkout the code from the repository
+                git 'https://github.com/username/my-app.git'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                // Build the application
+                sh 'mvn clean package'  // For a Java application using Maven
+            }
+        }
+
+        stage('Test') {
+            steps {
+                // Run tests
+                sh 'mvn test'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                // Deploy the application
+                sh "echo Deploying ${APP_NAME} to ${DEPLOY_ENV}"
+                // Add your deployment command here
+            }
+        }
+    }
+
+    post {
+        success {
+            // Actions to perform after a successful build
+            echo 'Pipeline completed successfully!'
+        }
+        failure {
+            // Actions to perform after a failed build
+            echo 'Pipeline failed!'
+        }
+    }
+}
+Example of a Scripted Pipeline
+A Scripted Pipeline is more flexible and allows for more complex logic but is less structured. Here’s a sample Jenkinsfile using the Scripted syntax:
+
+node {  // Start a new node block
+    // Define environment variables
+    def appName = 'my-app'
+    def deployEnv = 'production'
+
+    try {
+        stage('Checkout') {
+            // Checkout the code from the repository
+            git 'https://github.com/username/my-app.git'
+        }
+
+        stage('Build') {
+            // Build the application
+            sh 'mvn clean package'  // For a Java application using Maven
+        }
+
+        stage('Test') {
+            // Run tests
+            sh 'mvn test'
+        }
+
+        stage('Deploy') {
+            // Deploy the application
+            sh "echo Deploying ${appName} to ${deployEnv}"
+            // Add your deployment command here
+        }
+
+        echo 'Pipeline completed successfully!'
+    } catch (Exception e) {
+        echo 'Pipeline failed!'
+        echo e.getMessage()
+        // Optionally, you can fail the build
+        currentBuild.result = 'FAILURE'
+    }
+}
+Key Differences
+Structure:
+
+Declarative Pipeline: Has a more structured and easy-to-read format. It uses specific blocks like pipeline, stages, and steps.
+Scripted Pipeline: More flexible and allows for complex logic using Groovy scripting. It starts with node { ... } and uses standard Groovy constructs.
+Error Handling:
+
+Declarative Pipeline: Uses the post section for handling success and failure.
+Scripted Pipeline: Uses try-catch blocks to handle errors and can set the build result.
+Ease of Use:
+
+Declarative Pipeline: Easier for beginners due to its structured nature.
+Scripted Pipeline: More powerful for advanced users who need to implement complex workflows.
+Both types of pipelines can be used to achieve the same CI/CD goals, and the choice between them often depends on the complexity of the tasks and personal/team preference.
