@@ -1,0 +1,90 @@
+Agent directive in jenkins pipeline
+
+
+In Jenkins Pipeline, the agent directive is used to specify where the Pipeline or a specific stage should run. It defines the execution environment for the Pipeline, such as a specific Jenkins agent (node), Docker container, or even a specific label.
+
+Basic Usage of agent Directive
+Global Agent Declaration: You can declare an agent at the top level of the Pipeline script, which applies to the entire Pipeline.
+
+pipeline {
+    agent any  // This will run the Pipeline on any available agent
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building...'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing...'
+            }
+        }
+    }
+}
+Specific Agent: If you want to run the Pipeline on a specific agent, you can specify the agent's label.
+
+pipeline {
+    agent { label 'my-agent' }  // This will run the Pipeline on an agent with the label 'my-agent'
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building...'
+            }
+        }
+    }
+}
+Docker Agent: You can also specify a Docker container to run your Pipeline steps.
+
+pipeline {
+    agent {
+        docker {
+            image 'node:14'  // Use Node.js version 14 Docker image
+            args '-v /some/host/dir:/some/container/dir'  // Optional arguments
+        }
+    }
+    stages {
+        stage('Build') {
+            steps {
+                sh 'npm install'  // Run npm install in the Docker container
+            }
+        }
+    }
+}
+Sequential Stages with Different Agents: You can define different agents for different stages by specifying the agent directive within each stage.
+
+pipeline {
+    stages {
+        stage('Build') {
+            agent { label 'build-agent' }
+            steps {
+                echo 'Building...'
+            }
+        }
+        stage('Test') {
+            agent { label 'test-agent' }
+            steps {
+                echo 'Testing...'
+            }
+        }
+    }
+}
+Using none: If you want to define a stage without an agent (for example, for a stage that doesn't require a node), you can use none.
+
+pipeline {
+    stages {
+        stage('Preparation') {
+            agent none  // No agent needed for this stage
+            steps {
+                echo 'Preparing...'
+            }
+        }
+        stage('Build') {
+            agent any
+            steps {
+                echo 'Building...'
+            }
+        }
+    }
+}
+Summary
+The agent directive is a powerful feature of Jenkins Pipeline that allows you to define where your code will be executed, making it flexible to adapt to different environments, whether it's a specific agent, a Docker container, or no agent at all.
