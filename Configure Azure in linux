@@ -1,0 +1,62 @@
+we use aws configure command to configure aws in linux machine then tell me what command should i use to configure azure in linux
+
+
+Tutorial - Manage Linux virtual machine configuration in Azure
+
+
+learn.microsoft
+Quickstart: Use the Azure CLI to create a Linux Virtual Machine
+
+
+learn.microsoft
+Connect to a Linux VM - Azure Virtual Machines | Microsoft Learn
+
+
+learn.microsoft
+Run scripts in a Linux VM in Azure using action Run Commands
+
+
+learn.microsoft
+To configure Azure on a Linux machine, you will primarily use the Azure Command-Line Interface (CLI). Below are the steps and commands you need to follow to get started:
+
+1. Install Azure CLI
+Check if Azure CLI is installed: Run the following command to check the version of Azure CLI installed on your machine:
+
+az --version
+Install Azure CLI: If it is not installed, you can install it using the following command:
+
+curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+2. Log in to Azure
+Log in to your Azure account: Use the following command to log in. This will open a browser window for authentication.
+
+az login
+3. Create a Resource Group
+Create a resource group: A resource group is a container that holds related resources for an Azure solution. Use the following command to create one:
+
+az group create --name MyResourceGroup --location eastus
+4. Create a Virtual Machine
+Create a Linux Virtual Machine: Use the following command to create a VM. This example creates an Ubuntu VM and generates SSH keys if they do not already exist.
+
+az vm create \
+  --resource-group MyResourceGroup \
+  --name MyVM \
+  --image UbuntuLTS \
+  --admin-username azureuser \
+  --generate-ssh-keys
+5. Configure Networking (Optional)
+Open SSH port (22): If you need to allow SSH access to your VM, you can create a network security rule:
+
+az vm open-port --port 22 --resource-group MyResourceGroup --name MyVM
+6. Connect to the Virtual Machine
+SSH into the VM: After the VM is created, you can connect to it using SSH. Use the following command, replacing MyVM and MyResourceGroup with your actual VM and resource group names:
+
+ssh azureuser@<public-ip-address>
+To find the public IP address of your VM, you can run:
+
+az vm list-ip-addresses --resource-group MyResourceGroup --name MyVM --output table
+7. Additional Configuration
+Install Azure CLI Extensions: If you need additional functionality, you can install Azure CLI extensions. For example, to install the Azure DevOps extension:
+
+az extension add --name azure-devops
+Conclusion
+These commands will help you set up and configure Azure resources on a Linux machine using the Azure CLI. Make sure to replace placeholder names with your actual resource names as needed. For more advanced configurations, refer to the Azure CLI documentation for specific commands and options.
