@@ -1,0 +1,72 @@
+Here are the steps to create an Amazon EC2 instance in AWS using a shell script. This guide will walk you through the process of writing a shell script that utilizes the AWS Command Line Interface (CLI) to launch an EC2 instance.
+
+Step 1: Install and Configure AWS CLI
+
+Ensure that you have the AWS CLI installed on your Linux machine. You can install it using the following command:
+bash
+sudo apt-get install awscli  # For Debian/Ubuntu
+# or
+sudo yum install aws-cli      # For CentOS/RHEL
+Configure the AWS CLI with your credentials:
+bash
+aws configure
+You will be prompted to enter your AWS Access Key, Secret Key, region, and output format.
+
+Step 2: Create a Directory for Your Script
+
+Organize your scripts by creating a directory:
+bash
+mkdir ~/aws-scripts
+cd ~/aws-scripts
+Step 3: Create the Shell Script File
+
+Create a new shell script file:
+bash
+touch create_ec2_instance.sh
+Step 4: Make the Script Executable
+
+Change the permissions to make the script executable:
+bash
+chmod +x create_ec2_instance.sh
+Step 5: Edit the Shell Script
+
+Open the script in a text editor:
+bash
+nano create_ec2_instance.sh
+Add the following content to the script. This example launches a t2.micro instance using a specified AMI ID, instance type, key pair, security group, and subnet ID.
+bash
+#!/bin/bash
+
+# Variables
+AMI_ID="ami-0d70546e43a941d70"  # Replace with your AMI ID
+INSTANCE_TYPE="t2.micro"
+KEY_NAME="your-key-pair"        # Replace with your key pair name
+SECURITY_GROUP="your-sg-id"     # Replace with your security group ID
+SUBNET_ID="your-subnet-id"       # Replace with your subnet ID
+
+# Create EC2 instance
+aws ec2 run-instances \
+    --image-id $AMI_ID \
+    --count 1 \
+    --instance-type $INSTANCE_TYPE \
+    --key-name $KEY_NAME \
+    --security-group-ids $SECURITY_GROUP \
+    --subnet-id $SUBNET_ID \
+    --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=MyInstance}]'
+
+echo "EC2 instance created successfully."
+Save the file and exit the editor (in nano, press CTRL + X, then Y, and Enter).
+
+Step 6: Run the Shell Script
+
+Execute the script to create the EC2 instance:
+bash
+./create_ec2_instance.sh
+Step 7: Verify the Instance Creation
+
+After running the script, you can verify that the instance has been created by listing your instances:
+bash
+aws ec2 describe-instances --filters "Name=tag:Name,Values=MyInstance"
+Conclusion
+
+You have successfully created a shell script to launch an EC2 instance in AWS. Make sure to replace the placeholder values in the script with your actual AWS resource identifiers. You can further customize the script to include additional configurations as needed.
