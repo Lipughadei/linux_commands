@@ -1,0 +1,59 @@
+Git is a powerful version control system with a wide range of commands for managing your code and collaborating with others. Below is a comprehensive list of common Git commands, categorized for easier reference.
+
+Basic Commands
+git init: Initializes a new Git repository in the current directory.
+git clone <repository>: Creates a copy of a remote repository on your local machine.
+git add <file>: Stages changes in the specified file for the next commit.
+git add .: Stages all changes in the current directory and subdirectories.
+git commit -m "message": Commits the staged changes with a descriptive message.
+git status: Shows the status of the working directory and staging area.
+git log: Displays the commit history for the current branch.
+Branching and Merging
+git branch: Lists all local branches in the repository.
+git branch <branch-name>: Creates a new branch with the specified name.
+git checkout <branch-name>: Switches to the specified branch.
+git checkout -b <branch-name>: Creates a new branch and switches to it.
+git merge <branch-name>: Merges the specified branch into the current branch.
+git rebase <branch-name>: Reapplies commits on top of another base tip.
+Remote Repositories
+git remote -v: Lists the remote repositories associated with the local repository.
+git remote add <name> <url>: Adds a new remote repository with the specified name and URL.
+git fetch <remote>: Fetches changes from the remote repository without merging.
+git pull <remote> <branch>: Fetches changes from the specified remote branch and merges them into the current branch.
+git push <remote> <branch>: Pushes local commits to the specified remote branch.
+Viewing Changes
+git diff: Shows changes between the working directory and the staging area.
+git diff --staged: Shows changes between the staging area and the last commit.
+git show <commit>: Displays the changes made in a specific commit.
+git blame <file>: Shows who made changes to each line of a file.
+Undoing Changes
+git reset <file>: Unstages a file, keeping changes in the working directory.
+git reset --hard: Discards all changes in the working directory and staging area.
+git revert <commit>: Creates a new commit that undoes the changes made by the specified commit.
+git restore <file>: Discards changes in the working directory for the specified file.
+git restore --staged <file>: Unstages a file while keeping changes in the working directory.
+Tagging
+git tag: Lists all tags in the repository.
+git tag <tag-name>: Creates a new tag with the specified name.
+git push <remote> <tag-name>: Pushes a specific tag to the remote repository.
+Configuration
+git config --global user.name "Your Name": Sets the global username for commits.
+git config --global user.email "your.email@example.com": Sets the global email for commits.
+git config --list: Lists all Git configuration settings.
+Advanced Commands
+git stash: Stashes changes in the working directory that are not ready to be committed.
+git stash pop: Applies the most recent stashed changes and removes them from the stash.
+git stash list: Lists all stashed changes.
+git cherry-pick <commit>: Applies the changes from a specific commit to the current branch.
+Summary
+This list covers many of the most commonly used Git commands. There are additional commands and options available, especially for more advanced workflows. To get help on any Git command, you can always run:
+
+bash
+
+git <command> --help
+or
+
+bash
+
+man git-<command>
+This will provide detailed documentation on how to use the command and its various options. Understanding these commands will greatly enhance your ability to manage your code and collaborate effectively with others using Git.
