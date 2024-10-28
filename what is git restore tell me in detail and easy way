@@ -1,0 +1,67 @@
+git restore is a relatively new command introduced in Git 2.23 to simplify the process of restoring files in your working directory. It allows you to revert changes in your working directory or to restore files from a previous commit. This command can be particularly useful for undoing changes without having to use the more complex git checkout command.
+
+When to Use git restore
+You can use git restore in various scenarios:
+
+To discard changes in a file that you haven't staged yet.
+To unstage a file that you have already added to the staging area.
+To restore a file from a specific commit.
+Basic Syntax
+The basic syntax for git restore is as follows:
+
+bash
+
+git restore [options] <pathspec>
+Common Use Cases
+Here are some common use cases for git restore:
+
+1. Discarding Changes in a Working Directory
+If you have modified a file and want to discard the changes (i.e., revert it back to the last committed state), you can use:
+
+bash
+
+git restore <filename>
+For example, if you modified example.txt and want to discard those changes:
+
+bash
+
+git restore example.txt
+This command will replace example.txt with the version from the last commit, effectively discarding your changes.
+
+2. Unstaging Changes
+If you have staged a file (added it to the staging area) and want to remove it from staging (but keep your changes in the working directory), you can use:
+
+bash
+
+git restore --staged <filename>
+For example:
+
+bash
+
+git restore --staged example.txt
+This command will unstage example.txt, allowing you to make further modifications without losing your changes.
+
+3. Restoring a File from a Specific Commit
+If you want to restore a file from a specific commit, you can specify the commit hash. For example:
+
+bash
+
+git restore --source <commit-hash> <filename>
+For instance:
+
+bash
+
+git restore --source abc1234 example.txt
+This command will restore example.txt to the state it was in at the commit identified by abc1234.
+
+Comparison with Other Commands
+git checkout: Before the introduction of git restore, git checkout was used for similar purposes, but it had a broader scope and could be confusing, especially for new users. git restore is more focused on restoring files and is more intuitive for that specific task.
+
+git reset: This command is used to undo commits and changes in the staging area, but it operates at a different level than git restore.
+
+Summary
+git restore <filename>: Discards changes in the specified file, reverting it to the last committed state.
+git restore --staged <filename>: Unstages the specified file while keeping your changes in the working directory.
+git restore --source <commit-hash> <filename>: Restores a file from a specific commit.
+Conclusion
+git restore is a handy command that simplifies the process of reverting changes in your working directory and managing the staging area. By using git restore, you can easily discard unwanted changes, unstage files, or revert to previous versions of files without the complexity of other commands. As you become more familiar with Git, you'll find git restore to be a valuable tool for managing your files effectively.
