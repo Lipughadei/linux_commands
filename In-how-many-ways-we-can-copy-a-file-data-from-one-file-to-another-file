@@ -1,0 +1,9 @@
+-> cp source.txt destination.txt
+-> cat source.txt > destination.txt
+-> dd if=source.txt of=destination.txt
+-> rsync -av source.txt destination.txt
+-> scp user@remote:/path/to/source.txt /path/to/destination.txt
+-> tar -cvf archive.tar source.txt
+-> tar -xvf archive.tar -C /path/to/destination/
+-> echo source.txt | cpio -pdm /path/to/destination/
+-> find . -name "source.txt" -exec cp {} /path/to/destination/ \;
