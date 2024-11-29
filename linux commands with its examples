@@ -1,0 +1,462 @@
+Listing all Linux commands along with examples would be quite extensive, as there are thousands of commands available in Linux, each with numerous options and variations. However, I can provide a list of some of the most commonly used Linux commands along with brief descriptions and examples.
+
+Basic Commands
+ls - List directory contents
+
+bash
+
+Verify
+
+Open In Editor
+Edit
+Copy code
+ls -l
+cd - Change directory
+
+bash
+
+Verify
+
+Open In Editor
+Edit
+Copy code
+cd /path/to/directory
+pwd - Print working directory
+
+bash
+
+Verify
+
+Open In Editor
+Edit
+Copy code
+pwd
+mkdir - Make a new directory
+
+bash
+
+Verify
+
+Open In Editor
+Edit
+Copy code
+mkdir new_directory
+rmdir - Remove an empty directory
+
+bash
+
+Verify
+
+Open In Editor
+Edit
+Copy code
+rmdir empty_directory
+rm - Remove files or directories
+
+bash
+
+Verify
+
+Open In Editor
+Edit
+Copy code
+rm file.txt
+rm -r directory_name  # Remove directory and its contents
+cp - Copy files or directories
+
+bash
+
+Verify
+
+Open In Editor
+Edit
+Copy code
+cp source.txt destination.txt
+cp -r source_directory/ destination_directory/  # Copy directory
+mv - Move or rename files or directories
+
+bash
+
+Verify
+
+Open In Editor
+Edit
+Copy code
+mv oldname.txt newname.txt
+mv file.txt /path/to/new/location/
+touch - Create an empty file or update the timestamp of an existing file
+
+bash
+
+Verify
+
+Open In Editor
+Edit
+Copy code
+touch newfile.txt
+cat - Concatenate and display file content
+
+bash
+
+Verify
+
+Open In Editor
+Edit
+Copy code
+cat file.txt
+less - View file content one screen at a time
+
+bash
+
+Verify
+
+Open In Editor
+Edit
+Copy code
+less file.txt
+head - Display the first few lines of a file
+
+bash
+
+Verify
+
+Open In Editor
+Edit
+Copy code
+head -n 10 file.txt  # First 10 lines
+tail - Display the last few lines of a file
+
+bash
+
+Verify
+
+Open In Editor
+Edit
+Copy code
+tail -n 10 file.txt  # Last 10 lines
+File Permissions
+chmod - Change file permissions
+
+bash
+
+Verify
+
+Open In Editor
+Edit
+Copy code
+chmod 755 script.sh  # Owner can read/write/execute; others can read/execute
+chown - Change file owner and group
+
+bash
+
+Verify
+
+Open In Editor
+Edit
+Copy code
+chown user:group file.txt
+System Information
+uname - Print system information
+
+bash
+
+Verify
+
+Open In Editor
+Edit
+Copy code
+uname -a  # All system information
+top - Display running processes
+
+bash
+
+Verify
+
+Open In Editor
+Edit
+Copy code
+top
+htop - An interactive process viewer (if installed)
+
+bash
+
+Verify
+
+Open In Editor
+Edit
+Copy code
+htop
+df - Report file system disk space usage
+
+bash
+
+Verify
+
+Open In Editor
+Edit
+Copy code
+df -h  # Human-readable format
+free - Display memory usage
+
+bash
+
+Verify
+
+Open In Editor
+Edit
+Copy code
+free -h  # Human-readable format
+Networking
+ping - Send ICMP ECHO_REQUEST to network hosts
+
+bash
+
+Verify
+
+Open In Editor
+Edit
+Copy code
+ping google.com
+ifconfig - Configure a network interface (deprecated, use ip instead)
+
+bash
+
+Verify
+
+Open In Editor
+Edit
+Copy code
+ifconfig
+ip - Show/manipulate routing, devices, policy routing, and tunnels
+
+bash
+
+Verify
+
+Open In Editor
+Edit
+Copy code
+ip addr show
+curl - Transfer data from or to a server
+
+bash
+
+Verify
+
+Open In Editor
+Edit
+Copy code
+curl http://example.com
+wget - Download files from the web
+
+bash
+
+Verify
+
+Open In Editor
+Edit
+Copy code
+wget http://example.com/file.zip
+Package Management (Debian-based)
+apt-get - APT package handling utility
+bash
+
+Verify
+
+Open In Editor
+Edit
+Copy code
+sudo apt-get update  # Update package list
+sudo apt-get install package_name  # Install a package
+Package Management (Red Hat-based)
+yum - Package manager for RPM-based distributions
+bash
+
+Verify
+
+Open In Editor
+Edit
+Copy code
+sudo yum install package_name
+User Management
+useradd - Create a new user
+
+bash
+
+Verify
+
+Open In Editor
+Edit
+Copy code
+sudo useradd username
+passwd - Change user password
+
+bash
+
+Verify
+
+Open In Editor
+Edit
+Copy code
+passwd username
+whoami - Print the current user ID
+
+bash
+
+Verify
+
+Open In Editor
+Edit
+Copy code
+whoami
+Search and Find
+find - Search for files in a directory hierarchy
+
+bash
+
+Verify
+
+Open In Editor
+Edit
+Copy code
+find /path/to/search -name "filename.txt"
+grep - Search text using patterns
+
+bash
+
+Verify
+
+Open In Editor
+Edit
+Copy code
+grep "search_term" file.txt
+33. **locate** - Find files by name
+```bash
+locate filename.txt
+which - Locate a command
+
+bash
+
+Verify
+
+Open In Editor
+Edit
+Copy code
+which python
+whereis - Locate the binary, source, and manual page files for a command
+
+bash
+
+Verify
+
+Open In Editor
+Edit
+Copy code
+whereis gcc
+Disk Usage
+du - Estimate file space usage
+
+bash
+
+Verify
+
+Open In Editor
+Edit
+Copy code
+du -h /path/to/directory  # Human-readable format
+df - Report file system disk space usage
+
+bash
+
+Verify
+
+Open In Editor
+Edit
+Copy code
+df -h  # Human-readable format
+Archiving and Compression
+tar - Archive files
+
+bash
+
+Verify
+
+Open In Editor
+Edit
+Copy code
+tar -cvf archive.tar /path/to/directory  # Create an archive
+tar -xvf archive.tar  # Extract an archive
+gzip - Compress files
+
+bash
+
+Verify
+
+Open In Editor
+Edit
+Copy code
+gzip file.txt  # Compress
+gunzip file.txt.gz  # Decompress
+System Shutdown and Reboot
+shutdown - Bring the system down
+
+bash
+
+Verify
+
+Open In Editor
+Edit
+Copy code
+sudo shutdown now  # Immediate shutdown
+sudo shutdown -h +10  # Shutdown in 10 minutes
+reboot - Restart the system
+
+bash
+
+Verify
+
+Open In Editor
+Edit
+Copy code
+sudo reboot
+Miscellaneous
+echo - Display a line of text
+
+bash
+
+Verify
+
+Open In Editor
+Edit
+Copy code
+echo "Hello, World!"
+history - Show command history
+
+bash
+
+Verify
+
+Open In Editor
+Edit
+Copy code
+history
+clear - Clear the terminal screen
+
+bash
+
+Verify
+
+Open In Editor
+Edit
+Copy code
+clear
+man - Display the manual for a command
+
+bash
+
+Verify
+
+Open In Editor
+Edit
+Copy code
+man ls  # Manual for the ls command
