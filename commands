@@ -78,3 +78,5 @@ https://youtu.be/OuyNM5-r8P8?si=w0k3yH8Ds3_gE1lb  (Shell scripting project)
 -> l. (command to list out all the hidden file)
 
 -> compgen -c | wc -l (to know all the command you can run)
+
+-> hostnamectl  (to know all the details about your os and distribution)
