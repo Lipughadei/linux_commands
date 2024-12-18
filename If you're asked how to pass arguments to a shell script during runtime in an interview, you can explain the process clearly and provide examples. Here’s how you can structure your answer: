@@ -1,0 +1,124 @@
+1. Understanding Runtime Argument Passing
+In shell scripting, arguments can be passed to a script at the time of execution (runtime). This allows the script to be more flexible and reusable,
+as it can operate on different inputs without modifying the script itself.
+2. Using Special Variables
+When you run a shell script, you can pass arguments directly in the command line. Inside the script, these arguments can be accessed using special variables:
+$0: The name of the script.
+$1, $2, $3, ...: The first, second, third, etc., arguments passed to the script.
+$#: The total number of arguments passed.
+$@: All arguments as separate words.
+$*: All arguments as a single word.
+3. Example Script
+You can provide a simple example to illustrate how to pass and use arguments during runtime.
+
+bash
+
+Verify
+
+Open In Editor
+Run
+Copy code
+#!/bin/bash
+
+# A simple script to demonstrate passing arguments at runtime
+
+# Check if at least two arguments are provided
+if [ "$#" -lt 2 ]; then
+    echo "Usage: $0 arg1 arg2"
+    exit 1
+fi
+
+# Accessing the arguments
+arg1=$1
+arg2=$2
+
+# Display the arguments
+echo "Argument 1: $arg1"
+echo "Argument 2: $arg2"
+
+# Example operation: Concatenating the arguments
+result="$arg1 $arg2"
+echo "Concatenated Result: $result"
+4. Running the Script with Arguments
+You can explain how to run the script and pass arguments during runtime:
+
+Save the script to a file, e.g., my_script.sh.
+Make it executable:
+bash
+
+Verify
+
+Open In Editor
+Run
+Copy code
+chmod +x my_script.sh
+Run the script with arguments:
+bash
+
+Verify
+
+Open In Editor
+Run
+Copy code
+./my_script.sh Hello World
+5. Expected Output
+When the script is executed with the arguments "Hello" and "World", the output will be:
+
+
+Verify
+
+Open In Editor
+Run
+Copy code
+Argument 1: Hello
+Argument 2: World
+Concatenated Result: Hello World
+6. Handling Multiple Arguments
+You can also mention that the script can handle multiple arguments. For example, if you want to sum numbers passed as arguments:
+
+bash
+
+Verify
+
+Open In Editor
+Run
+Copy code
+#!/bin/bash
+
+# A script to sum numbers passed as arguments
+
+sum=0
+
+# Loop through all arguments
+for num in "$@"; do
+    sum=$((sum + num))
+done
+
+echo "Total Sum: $sum"
+7. Running the Sum Script
+To run the sum script:
+
+bash
+
+Verify
+
+Open In Editor
+Run
+Copy code
+./sum_script.sh 1 2 3 4 5
+8. Expected Output for Sum Script
+The output will be:
+
+
+Verify
+
+Open In Editor
+Run
+Copy code
+Total Sum: 15
+9. Conclusion
+In summary, passing arguments to a shell script at runtime allows for dynamic input, making scripts more versatile.
+By using special variables, you can easily access and manipulate these arguments to perform various tasks.
+10. Practice
+Before the interview, practice writing and executing shell scripts that take arguments to become comfortable with the syntax and argument handling.
+This structured approach will help you effectively communicate your understanding of passing arguments to shell scripts during runtime in an interview setting.
