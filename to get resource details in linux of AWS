@@ -1,0 +1,31 @@
+#!/bin/bash
+
+
+
+############################
+#
+# Author: Lipu
+# Date: 9th-April
+#
+# Version: v1
+#
+# to list out some resurces from AWS
+#
+############################
+
+set -x // to run in debug mode
+
+aws s3 ls
+
+aws ec2 run-instances \
+    --image-id ami-080b1a55a0ad28c02 \
+    --count 1 \
+    --instance-type t2.micro \
+    --key-name docker1 \
+    --security-group-ids sg-00b5a01da30948742
+
+aws ec2 describe-instances
+
+aws iam create-user --user-name doom
+
+aws iam list-users
